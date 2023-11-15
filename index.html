@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Homepage</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* CSS to remove border from iframe */
+        body {
+            margin: 0;
+        }
+
+        iframe {
+            border: none;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+
+        h1, p {
+            color: grey;
+            font-family: Arial;
+            /* Change color to white */
+        }          
+
+        .column {
+            float: left;
+            width: 33.33%;
+            /* Define the height */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        /* changes made to this paragraph*/
+        @media screen and (max-width: 360px) {
+            .video-container video {
+                display: none;
+            }
+
+            .video-container {
+                background-image: url('ocean.jpg');
+                background-size: cover;
+                background-position: center;
+                height: 300px;
+            }
+
+            .column {
+                float: none;
+                width: 100%;
+            }
+        }  
+
+        .image-container {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.1);
+            /* Zoom effect on hover */
+        }
+
+        .text-container {
+            text-align: center;
+            color: white;
+            padding: 10px;
+        }
+
+        /* CHANGES */
+        .content {
+            padding: 0px;
+            /* Adjust the padding as needed */
+        }
+
+        .column {
+            filter: blur(0.3px);
+        }
+
+        .column p {
+            margin-top: 10px;
+            /* Adjust the margin as needed */
+        }
+
+        .image-container.disneyland {
+            background-image: url('disneyland.jpg');
+        }
+
+        .image-container.pisa {
+            background-image: url('pisa.jpg');
+        }
+
+        .image-container.tower {
+            background-image: url('tower.jpg');
+        }
+
+        /* Text on top of images */
+        .text {
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <iframe src="navbar.html"></iframe>
+
+
+    <!-- Other content of your homepage goes here -->
+    <div class="content">
+        <h1>Welcome to Worldxplore!</h1>
+        <p>Plan your trips now!</p>
+        <!-- Add more content as needed -->
+
+        <!-- Video code -->
+
+
+        <!-- Add more sources for different video formats if needed -->
+
+        <div class="video-container">
+            <video width="100%" loop autoplay muted>
+                <source src="lesson3.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <h1>Top 3 spots!</h1>
+        <div class="row">
+            <div class="column">
+                <div class="image-container disneyland"></div>
+                <div class="text-container">
+                    <div class="text">Disneyland</div>
+                    <p>Magical place for all ages! Discover the wonders of Disneyland.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="image-container pisa"></div>
+                <div class="text-container">
+                    <div class="text">Leaning Tower of Pisa</div>
+                    <p>Explore the iconic Leaning Tower of Pisa and its history.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="image-container tower"></div>
+                <div class="text-container">
+                    <div class="text">Eiffel Tower</div>
+                    <p>Behold the grandeur of the Eiffel Tower, a symbol of Paris.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

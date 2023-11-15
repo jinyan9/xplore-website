@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ContactUs</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Include your external CSS file -->
+    <style>
+        body {
+            background-color: orange;
+            margin: 0;
+        }
+
+        iframe {
+            border: none;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .container-fluid {
+            margin-top:100px;
+            
+            /* Adjust the padding for space below the fixed navbar */
+        }
+        
+    </style>
+</head>
+
+<body>
+    <iframe id="navbarFrame" src="navbar.html" width="100%" height="auto"></iframe>
+    <div class="container-fluid bg-info" style="padding-top: 50px;"> <!-- Adjust the padding as needed -->
+        <div style="background-color: orange;" class="row">
+            <div class="col-md-6 col-lg-6 mt-md-0 pl-5 pt-4">
+                <div class="mb-5 pl-5 mt-2">
+                    <h2 class="text-black" style="text-decoration: underline;"> Contact Us</h2>
+                    <h5 class="text-black"> </h5>
+                </div>
+                <ul class="text-black pl-5 fa-ul">
+                    <li class='mb-3'><span class="fa-li"><i class="fa fa-envelope" aria-hidden="true"> </i></span>Email: xplore@gmail.com</li>
+                    <li class='mb-3'><span class="fa-li"> <i class="fa fa-fax" aria-hidden="true"></i></span>Contact Number: +65 9673 3544</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var frame = document.getElementById('navbarFrame');
+            frame.onload = function() {
+                var frameDoc = frame.contentDocument || frame.contentWindow.document;
+                var frameHeight = frameDoc.documentElement.scrollHeight || frameDoc.body.scrollHeight;
+                frame.style.height = frameHeight + '10px';
+            };
+        };
+    </script>
+</body>
+
+</html>
